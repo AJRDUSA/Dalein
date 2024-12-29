@@ -3,48 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJRD USA Presidential Candidates Voting</title>
+    <title>AJRD USA</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        .candidate { cursor: pointer; margin: 5px 0; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
-        .candidate:hover { background-color: #f0f0f0; }
-        .score { margin-left: 10px; }
-        .results { margin-top: 20px; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header, footer { padding: 10px; background: #f2f2f2; text-align: center; }
+        nav { margin: 10px; }
+        nav a { margin: 0 15px; text-decoration: none; color: #333; }
+        section { padding: 20px; }
+        h1, h2 { color: #0056b3; }
+        .events { margin-top: 20px; }
+        .event { margin-bottom: 10px; }
+        form { display: flex; flex-direction: column; max-width: 300px; margin: 0 auto; }
+        input, textarea { margin-bottom: 10px; padding: 8px; }
     </style>
 </head>
 <body>
-    <h1>Vote for Your Favorite Candidate</h1>
-    <div id="candidates">
-        <div class="candidate" onclick="vote('candidate1')">
-            Candidate 1<span class="score" id="candidate1-score">: 0</span>
-        </div>
-        <div class="candidate" onclick="vote('candidate2')">
-            Candidate 2<span class="score" id="candidate2-score">: 0</span>
-        </div>
-        <div class="candidate" onclick="vote('candidate3')">
-            Candidate 3<span class="score" id="candidate3-score">: 0</span>
-        </div>
-        <div class="candidate" onclick="vote('candidate4')">
-            Candidate 4<span class="score" id="candidate4-score">: 0</span>
-        </div>
-        <div class="candidate" onclick="vote('candidate5')">
-            Candidate 5<span class="score" id="candidate5-score">: 0</span>
-        </div>
-    </div>
 
-    <div class="results">
-        <h2>Results</h2>
-        <div id="result-display"></div>
-    </div>
+<header>
+    <h1>AJRD USA</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-    <script>
-        const votes = {
-            candidate1: 0,
-            candidate2: 0,
-            candidate3: 0,
-            candidate4: 0,
-            candidate5: 0
-        };
+<section id="home">
+    <h2>Welcome to AJRD USA</h2>
+    <p>Your association for connecting and empowering members. We strive to create a supportive community that fosters collaboration, growth, and innovation among our members.</p>
+</section>
 
-        function vote(candidate) {
-            // Increment the vote
+<section id="about">
+    <h2>About Us</h2>
+    <p>The AJRD USA is dedicated to fostering a community for all its members. Our mission is to support and promote activities that enhance collaboration and growth.</p>
+    <p>Founded in [Year], AJRD USA has been a pivotal organization in bringing together individuals with a shared vision. We believe in the power of community and actively work to create opportunities for our members to connect, learn, and thrive.</p>
+</section>
+
+<section id="events">
+    <h2>Upcoming
