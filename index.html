@@ -1,42 +1,51 @@
-html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJRD USA Presidential Candidates</title>
+    <title>AJRD USA Presidential Candidates Voting</title>
     <style>
         body { font-family: Arial, sans-serif; }
-        .candidate { cursor: pointer; margin: 5px 0; }
-        .score { display: none; margin-left: 10px; }
+        .candidate { cursor: pointer; margin: 5px 0; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        .candidate:hover { background-color: #f0f0f0; }
+        .score { margin-left: 10px; }
+        .results { margin-top: 20px; }
     </style>
 </head>
 <body>
     <h1>Vote for Your Favorite Candidate</h1>
     <div id="candidates">
-        <div class="candidate" onclick="toggleScore('candidate1')">
-            Candidate 1<span class="score" id="candidate1">: 10 points</span>
+        <div class="candidate" onclick="vote('candidate1')">
+            Candidate 1<span class="score" id="candidate1-score">: 0</span>
         </div>
-        <div class="candidate" onclick="toggleScore('candidate2')">
-            Candidate 2<span class="score" id="candidate2">: 15 points</span>
+        <div class="candidate" onclick="vote('candidate2')">
+            Candidate 2<span class="score" id="candidate2-score">: 0</span>
         </div>
-        <div class="candidate" onclick="toggleScore('candidate3')">
-            Candidate 3<span class="score" id="candidate3">: 8 points</span>
+        <div class="candidate" onclick="vote('candidate3')">
+            Candidate 3<span class="score" id="candidate3-score">: 0</span>
         </div>
-        <div class="candidate" onclick="toggleScore('candidate4')">
-            Candidate 4<span class="score" id="candidate4">: 20 points</span>
+        <div class="candidate" onclick="vote('candidate4')">
+            Candidate 4<span class="score" id="candidate4-score">: 0</span>
         </div>
-        <div class="candidate" onclick="toggleScore('candidate5')">
-            Candidate 5<span class="score" id="candidate5">: 12 points</span>
+        <div class="candidate" onclick="vote('candidate5')">
+            Candidate 5<span class="score" id="candidate5-score">: 0</span>
         </div>
     </div>
 
-    <script>
-        function toggleScore(candidateId) {
-            const scoreElement = document.getElementById(candidateId);
-            scoreElement.style.display = scoreElement.style.display === 'none' ? 'inline' : 'none';
-        }
-    </script>
-</body>
-</html>
+    <div class="results">
+        <h2>Results</h2>
+        <div id="result-display"></div>
+    </div>
 
+    <script>
+        const votes = {
+            candidate1: 0,
+            candidate2: 0,
+            candidate3: 0,
+            candidate4: 0,
+            candidate5: 0
+        };
+
+        function vote(candidate) {
+            votes[candidate]++;
+            document.getElementById(`${candidate}-
